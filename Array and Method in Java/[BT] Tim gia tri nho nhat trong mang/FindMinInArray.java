@@ -6,12 +6,12 @@ public class FindMinIn2dArray {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Nhap chieu dai cua mang khoi tao: ")
+        System.out.println("Nhap chieu dai cua mang khoi tao: ");
         int size = input.nextInt();
 
         int[] array = new int[size];
         for (int i = 0; i < array.length; i++) {
-            System.out.println("Nhap gia tri phan tu o vi tri " + i)
+            System.out.println("Nhap gia tri phan tu o vi tri " + i);
             array[i] = input.nextInt();
         }
 
