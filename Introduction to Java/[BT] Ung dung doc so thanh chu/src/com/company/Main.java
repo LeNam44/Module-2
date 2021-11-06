@@ -3,51 +3,58 @@ package com.company;
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Input number that you want to convert to string: ");
-        int number = scanner.nextInt();
+        String number1 = "1";
+        int number2 = 12;
+        System.out.println(number1+number2);
 
-        if (number >= 0) {
-            switch (number) {
-                case 0:
-                    System.out.println("Zero");
-                    break;
-                case 1:
-                    System.out.println("One");
-                    break;
-                case 2:
-                    System.out.println("Two");
-                    break;
-                case 3:
-                    System.out.println("Three");
-                    break;
-                case 4:
-                    System.out.println("Four");
-                    break;
-                case 5:
-                    System.out.println("Five");
-                    break;
-                case 6:
-                    System.out.println("Six");
-                    break;
-                case 7:
-                    System.out.println("Seven");
-                    break;
-                case 8:
-                    System.out.println("Eight");
-                    break;
-                case 9:
-                    System.out.println("Nine");
-                    break;
-                default:
-                    System.out.println("Out of ability");
-                    break;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhập số cần đọc :");
+        int so = scanner.nextInt();
+
+        if (so >= 10) {
+            while (so >= 10) {
+                show(so % 10);
+                so = so / 10;
             }
-        } else if (number >= 10)
-            switch (number) {
-            
-            }
+            show(1);
+        }else {
+            show(so);
+        }
+    }
+
+    public static void show(int so) {
+        switch (so) {
+            case 0:
+                System.out.print("không ");
+                break;
+            case 1:
+                System.out.print("một ");
+                break;
+            case 2:
+                System.out.print("hai ");
+                break;
+            case 3:
+                System.out.print("ba ");
+                break;
+            case 4:
+                System.out.print("bốn ");
+                break;
+            case 5:
+                System.out.print("năm ");
+                break;
+            case 6:
+                System.out.print("sáu ");
+                break;
+            case 7:
+                System.out.print("bảy ");
+                break;
+            case 8:
+                System.out.print("tám ");
+                break;
+            case 9:
+                System.out.print("chín ");
+                break;
+        }
     }
 }
