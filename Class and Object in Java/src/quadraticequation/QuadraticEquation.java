@@ -9,7 +9,7 @@ public class QuadraticEquation {
         this.c = c;
     }
 
-    public double getA() {
+    private double getA() {
         return this.a;
     }
 
