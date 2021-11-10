@@ -1,4 +1,4 @@
-package KeThua.LopAnimalVaInterfaceEdiable;
+package AbstractClassAndInterface.LopAnimalVaInterfaceEdiable;
 
 public class MainTest {
     public static void main(String[] args) {

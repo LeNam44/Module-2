@@ -1,4 +1,4 @@
-package KeThua.TrienKhaiInterfaceComparable;
+package AbstractClassAndInterface.TrienKhaiInterfaceComparable;
 
 import java.util.Arrays;
 

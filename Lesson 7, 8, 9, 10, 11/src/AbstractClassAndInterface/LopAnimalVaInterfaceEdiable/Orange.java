@@ -1,4 +1,4 @@
-package KeThua.LopAnimalVaInterfaceEdiable;
+package AbstractClassAndInterface.LopAnimalVaInterfaceEdiable;
 
 public class Orange extends Fruit {
     @Override

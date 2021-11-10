@@ -1,4 +1,4 @@
-package KeThua.TrienKhaiInterfaceComparable;
+package AbstractClassAndInterface.TrienKhaiInterfaceComparable;
 
 public class Circle extends Shape {
     private double radius = 1.0;

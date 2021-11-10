@@ -1,4 +1,4 @@
-package KeThua.TrienKhaiInterfaceComparable;
+package AbstractClassAndInterface.TrienKhaiInterfaceComparable;
 
 public class ComparableCircle extends Circle implements Comparable {
     public ComparableCircle() {

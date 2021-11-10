@@ -1,16 +1,16 @@
-package KeThua.TrienKhaiInterfaceComparator;
+package AbstractClassAndInterface.TrienKhaiInterfaceComparator;
 
 import java.util.Arrays;
 
 public class CircleComparatorTest {
     public static void main(String[] args) {
-        Circle[] circles = new Circle[3];
-        circles[0] = new Circle(3.6);
-        circles[1] = new Circle();
-        circles[2] = new Circle(3.5, "indigo", false);
+        Circle1[] circles = new Circle1[3];
+        circles[0] = new Circle1(3.6);
+        circles[1] = new Circle1();
+        circles[2] = new Circle1(3.5, "indigo", false);
 
         System.out.println("Pre-sorted:");
-        for (Circle circle : circles) {
+        for (Circle1 circle : circles) {
             System.out.println(circle);
         }
 
@@ -18,7 +18,7 @@ public class CircleComparatorTest {
         Arrays.sort(circles, circleComparator);
 
         System.out.println("After-sorted:");
-        for (Circle circle : circles) {
+        for (Circle1 circle : circles) {
             System.out.println(circle);
         }
     }

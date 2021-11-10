@@ -1,16 +1,16 @@
-package KeThua.TrienKhaiInterfaceComparator;
+package AbstractClassAndInterface.TrienKhaiInterfaceComparator;
 
-public class Circle extends Shape {
+public class Circle1 extends Shape1 {
     private double radius = 1.0;
 
-    public Circle() {
+    public Circle1() {
     }
 
-    public Circle(double radius) {
+    public Circle1(double radius) {
         this.radius = radius;
     }
 
-    public Circle(double radius, String color, boolean filled) {
+    public Circle1(double radius, String color, boolean filled) {
         super(color, filled);
         this.radius = radius;
     }

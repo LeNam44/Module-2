@@ -1,16 +1,16 @@
-package KeThua.TrienKhaiInterfaceComparator;
+package AbstractClassAndInterface.TrienKhaiInterfaceComparator;
 
 import java.util.Arrays;
 
 public class SquareComparatorTest {
     public static void main(String[] args) {
-        Square[] squares = new Square[3];
-        squares[0] = new Square(5);
-        squares[1] = new Square();
-        squares[2] = new Square(8, "purple", true);
+        Square1[] squares = new Square1[3];
+        squares[0] = new Square1(5);
+        squares[1] = new Square1();
+        squares[2] = new Square1(8, "purple", true);
 
         System.out.println("Pre-sorted");
-        for (Square square : squares) {
+        for (Square1 square : squares) {
             System.out.println(square);
         }
 
@@ -18,7 +18,7 @@ public class SquareComparatorTest {
         Arrays.sort(squares, squareComparator);
 
         System.out.println("After-sorted");
-        for (Square square : squares) {
+        for (Square1 square : squares) {
             System.out.println(square);
         }
     }

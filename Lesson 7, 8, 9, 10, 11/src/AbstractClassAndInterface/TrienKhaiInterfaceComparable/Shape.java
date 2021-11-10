@@ -1,4 +1,4 @@
-package KeThua.TrienKhaiInterfaceComparable;
+package AbstractClassAndInterface.TrienKhaiInterfaceComparable;
 
 public class Shape {
     private String color = "green";

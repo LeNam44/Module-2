@@ -1,4 +1,4 @@
-package KeThua.TrienKhaiInterfaceComparator;
+package AbstractClassAndInterface.TrienKhaiInterfaceComparator;
 
 public interface Comparator {
     int compare();
