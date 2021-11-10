@@ -1,18 +1,18 @@
-package KeThua.TrienKhaiInterfaceComparator;
+package AbstractClassAndInterface.TrienKhaiInterfaceResizeable;
 
-public class Rectangle extends Shape {
+public class Rectangle2 extends Shape2 {
     private double width = 1.0;
     private double length = 1.0;
 
-    public Rectangle() {
+    public Rectangle2() {
     }
 
-    public Rectangle(double width, double length) {
+    public Rectangle2(double width, double length) {
         this.width = width;
         this.length = length;
     }
 
-    public Rectangle(double width, double length, String color, boolean filled) {
+    public Rectangle2(double width, double length, String color, boolean filled) {
         super(color, filled);
         this.width = width;
         this.length = length;
@@ -50,5 +50,10 @@ public class Rectangle extends Shape {
                 + getLength()
                 + ", which is a subclass of "
                 + super.toString();
+    }
+    @Override
+    public void resize(double percent) {
+        double newArea = getArea() * percent;
+        System.out.println("Area of Rectangle: " + getArea() + " after resize to " + Math.round(percent*100) + "% is " + newArea);
     }
 }

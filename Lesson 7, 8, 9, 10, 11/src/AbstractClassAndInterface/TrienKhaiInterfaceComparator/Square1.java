@@ -1,4 +1,4 @@
-package KeThua.TrienKhaiInterfaceComparator;
+package AbstractClassAndInterface.TrienKhaiInterfaceComparator;
 
 public class Square extends Rectangle {
     public Square() { }
