@@ -36,6 +36,9 @@ public class EmployeeController {
                     break;
                 case 6:
                     System.exit(0);
+                default:
+                    System.out.println("Error");
+                    break;
             }
         }
     }
@@ -61,12 +64,17 @@ public class EmployeeController {
     public static Employee[] deleteById(Employee[] employees) {
         System.out.println("Nhap id nhan vien can xoa:");
         int id = scanner.nextInt();
-        Employee[] newEmployeesList = new Employee[employees.length - 1];
-        for (int i = 0; i < newEmployeesList.length; i++) {
+        Employee[] newEmployeesList = null;
+        for (int i = 0; i < employees.length-1; i++) {
             if (id == employees[i].getId()) {
-                newEmployeesList[i] = employees[i+1];
-            } else {
-                newEmployeesList[i] = employees[i];
+                newEmployeesList = new Employee[employees.length - 1];
+                for (int j = 0; j < i; j++) {
+                    newEmployeesList[j] = employees[j];
+                }
+                for (int j = i; j < employees.length-1; j++) {
+                    newEmployeesList[j] = employees[j+1];
+                }
+                break;
             }
         }
         return newEmployeesList;
