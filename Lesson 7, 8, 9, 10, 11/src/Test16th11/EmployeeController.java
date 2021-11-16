@@ -95,7 +95,16 @@ public class EmployeeController {
         int id = scanner.nextInt();
         for (Employee employee: employees) {
             if (id == employee.getId()) {
-                employee = createEmployee();
+                System.out.println("Nhap ten moi:");
+                scanner.nextLine();
+                String newName = scanner.nextLine();
+                System.out.println("Nhap dia chi moi:");
+                String newAddress = scanner.nextLine();
+                System.out.println("Nhap so dien thoai moi:");
+                String newPhoneNumber = scanner.nextLine();
+                employee.setName(newName);
+                employee.setAddress(newAddress);
+                employee.setPhoneNumber(newPhoneNumber);
             }
         }
     }
