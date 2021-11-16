@@ -61,26 +61,15 @@ public class EmployeeController {
     public static Employee[] deleteById(Employee[] employees) {
         System.out.println("Nhap id nhan vien can xoa:");
         int id = scanner.nextInt();
-        boolean hasSameId = false;
-        for (Employee employee: employees) {
-            if (id == employee.getId()) {
-                hasSameId = true;
-                break;
+        Employee[] newEmployeesList = new Employee[employees.length - 1];
+        for (int i = 0; i < newEmployeesList.length; i++) {
+            if (id == employees[i].getId()) {
+                newEmployeesList[i] = employees[i+1];
+            } else {
+                newEmployeesList[i] = employees[i];
             }
         }
-        if (!hasSameId) {
-            return employees;
-        } else {
-            Employee[] newEmployeesList = new Employee[employees.length - 1];
-            int newID = 0;
-            for (Employee employee : employees) {
-                if (hasSameId) {
-                    newEmployeesList[newID] = employee;
-                    newID++;
-                }
-            }
-            return newEmployeesList;
-        }
+        return newEmployeesList;
     }
 
     public static void searchEmployeeById(Employee[] employees) {

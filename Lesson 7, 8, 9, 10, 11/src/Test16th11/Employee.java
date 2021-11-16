@@ -20,7 +20,9 @@ public class Employee {
     public int getId() {
         return id;
     }
-
+    public int getIdNumber() {
+        return idNumber;
+    }
     @Override
     public String toString() {
         return "Employee {" +
