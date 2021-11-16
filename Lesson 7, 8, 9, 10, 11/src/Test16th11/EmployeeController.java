@@ -89,9 +89,7 @@ public class EmployeeController {
         for (Employee employee: employees) {
             if (id == employee.getId()) {
                 System.out.println(employee);
-            } else {
-                System.out.println("Khong tim thay nhan vien nay");
-            }
+            } 
         }
     }
 
