@@ -1,4 +1,4 @@
-package JavaCollectionFramework.LuyenTapDungALvaLL;
+package JavaCollectionFramework.LuyenTapDungALvaLL.DungArrayList;
 
 public class Product {
     private int id;
