@@ -32,7 +32,7 @@ public class ProductManager {
     }
 
     public boolean checkID(int id) {
-        if (id <= 0 || id >= productList.size()) {
+        if (id <= 0 || id > productList.size()) {
             return false;
         } else {
             return true;
