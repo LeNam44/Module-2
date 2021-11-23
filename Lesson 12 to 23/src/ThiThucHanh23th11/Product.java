@@ -2,6 +2,7 @@ package ThiThucHanh23th11;
 
 public class Product {
     private int id;
+    private String productCode;
     private String productName;
     private int price;
     private int amount;
@@ -10,7 +11,8 @@ public class Product {
 
     public Product() {}
 
-    public Product(String productName, int price, int amount, String description) {
+    public Product(String productCode, String productName, int price, int amount, String description) {
+        this.productCode = productCode;
         this.productName = productName;
         this.price = price;
         this.amount = amount;
@@ -54,8 +56,16 @@ public class Product {
         this.description = description;
     }
 
+    public String getProductCode() {
+        return productCode;
+    }
+
+    public void setProductCode(String productCode) {
+        this.productCode = productCode;
+    }
+
     @Override
     public String toString() {
-        return "(id: " + id + ") " + "Name: " + productName + " | Price: " + price + " | Amount: " + amount + " | Description: " + description + "\n";
+        return "(id: " + id + ") Product Code: " + productCode + " | Name: " + productName + " | Price: " + price + " | Amount: " + amount + " | Description: " + description + "\n";
     }
 }

@@ -8,6 +8,9 @@ public class ProductServiceMenu {
     public void formAddProduct() {
         boolean checkAdd = true;
         while (checkAdd) {
+            System.out.println("Input product code: ");
+            String productCode = scanner.nextLine();
+
             System.out.println("Input product name: ");
             String productName = scanner.nextLine();
 
@@ -21,8 +24,15 @@ public class ProductServiceMenu {
             scanner.nextLine();
             String description = scanner.nextLine();
 
-            Product product = new Product(productName, price, amount, description);
-            productManager.addProduct(product);
+            System.out.println("Enter Y to confirm or any key to quit");
+            String yes = scanner.next();
+            if (yes.equalsIgnoreCase("y")) {
+                Product product = new Product(productCode, productName, price, amount, description);
+                productManager.addProduct(product);
+                System.out.println("Product added");
+            } else {
+                new Main();
+            }
 
             System.out.println("Enter any key to continue or QUIT to return to Menu");
             String continueOrQuit = scanner.next();
@@ -43,7 +53,7 @@ public class ProductServiceMenu {
             int id = scanner.nextInt();
             if (productManager.checkID(id)) {
                 Product product = productManager.findProductById(id-1);
-                System.out.println(" " + product.getId() + " " + product.getProductName() + " " + product.getPrice());
+                System.out.println(product);
             } else {
                 System.out.println("ID is not found");
             }
@@ -61,11 +71,18 @@ public class ProductServiceMenu {
             System.out.println("Enter ID to delete: ");
             int deleteId = scanner.nextInt();
             if (productManager.checkID(deleteId)) {
-                productManager.deleteById(deleteId - 1);
-                System.out.println("Product Deleted");
+                System.out.println("Enter Y to confirm delete or any key to quit");
+                String yes = scanner.next();
+                if (yes.equalsIgnoreCase("y")) {
+                    productManager.deleteById(deleteId - 1);
+                    System.out.println("Product Deleted");
+                } else {
+                    new Main();
+                }
             } else {
                 System.out.println("Id not found");
             }
+
             System.out.println("Enter any key to continue or QUIT to return to Menu");
             String continueOrQuit = scanner.next();
             if (continueOrQuit.equalsIgnoreCase("quit")) {
@@ -80,8 +97,11 @@ public class ProductServiceMenu {
             System.out.println("Enter ID to edit: ");
             int editId = scanner.nextInt();
             if (productManager.checkID(editId)) {
-                System.out.println("Edit name: ");
+                System.out.println("Edit code: ");
                 scanner.nextLine();
+                String code = scanner.nextLine();
+
+                System.out.println("Edit name: ");
                 String name = scanner.nextLine();
 
                 System.out.println("Edit price: ");
@@ -91,13 +111,21 @@ public class ProductServiceMenu {
                 int amount = scanner.nextInt();
 
                 System.out.println("Edit description: ");
+                scanner.nextLine();
                 String description = scanner.nextLine();
 
-                productManager.editProduct(editId-1, name, price, amount, description);
-                System.out.println("Product edited");
+                System.out.println("Enter Y to confirm or any key to quit");
+                String yes = scanner.next();
+                if (yes.equalsIgnoreCase("y")) {
+                    productManager.editProduct(editId-1, code, name, price, amount, description);
+                    System.out.println("Product edited");
+                } else {
+                    new Main();
+                }
             } else {
                 System.out.println("Id not found");
             }
+
             System.out.println("Enter any key to continue or QUIT to return to Menu");
             String continueOrQuit = scanner.next();
             if (continueOrQuit.equalsIgnoreCase("quit")) {

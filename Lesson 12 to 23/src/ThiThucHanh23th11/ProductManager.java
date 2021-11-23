@@ -9,10 +9,10 @@ public class ProductManager {
 
     public static ArrayList<Product> productList = new ArrayList<>();
     static {
-        productList.add(new Product("Hong Tra", 25000, 30, "Tra co mau hong ngoc"));
-        productList.add(new Product("Hong Tra Chanh", 12000, 45, "Hong tra vi chanh"));
-        productList.add(new Product("Hong Tra Tac", 20000, 35, "Hong tra vi quat"));
-        productList.add(new Product("Tra Sua", 15000, 25, "Tra pha voi sua tuoi"));
+        productList.add(new Product("ABC123", "Hong Tra", 25000, 30, "Tra co mau hong ngoc"));
+        productList.add(new Product("AYQ256", "Hong Tra Chanh", 12000, 45, "Hong tra vi chanh"));
+        productList.add(new Product("HFA824", "Hong Tra Tac", 20000, 35, "Hong tra vi quat"));
+        productList.add(new Product("SAD241", "Tra Sua", 15000, 25, "Tra pha voi sua tuoi"));
     }
 
     public ArrayList<Product> findAll() {
@@ -43,7 +43,8 @@ public class ProductManager {
         productList.remove(id);
     }
 
-    public void editProduct(int id ,String productName, int price, int amount, String description) {
+    public void editProduct (int id , String productCode, String productName, int price, int amount, String description) {
+        findProductById(id).setProductCode(productCode);
         findProductById(id).setProductName(productName);
         findProductById(id).setPrice(price);
         findProductById(id).setAmount(amount);
