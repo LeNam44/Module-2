@@ -27,7 +27,7 @@ public class Main {
                     productMenu.formAddProduct();
                     break;
                 case 3:
-                    productMenu.editProductById();
+                    productMenu.editProduct();
                     break;
                 case 4:
                     productMenu.deleteProductById();

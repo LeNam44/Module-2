@@ -2,6 +2,7 @@ package ThiThucHanh23th11;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class ProductManager {
@@ -29,6 +30,20 @@ public class ProductManager {
 
     public Product findProductById(int id) {
         return productList.get(id);
+    }
+
+    public int findProductIdByCode(String productCode) {
+        int id = 0;
+        for (Product product: productList) {
+            if (product.getProductCode().equalsIgnoreCase(productCode)) {
+                id = product.getId();
+            }
+        }
+        if (id <= 0 || id > productList.size()) {
+            throw new IndexOutOfBoundsException("Product Code " + productCode + " does not exist");
+        } else {
+            return id;
+        }
     }
 
     public boolean checkID(int id) {

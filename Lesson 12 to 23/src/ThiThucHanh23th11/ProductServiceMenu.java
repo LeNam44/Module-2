@@ -91,14 +91,11 @@ public class ProductServiceMenu {
         }
     }
 
-    public void editProductById() {
+    public void editProductById(int id) {
         boolean checkEdit = true;
         while (checkEdit) {
-            System.out.println("Enter ID to edit: ");
-            int editId = scanner.nextInt();
-            if (productManager.checkID(editId)) {
+            if (productManager.checkID(id)) {
                 System.out.println("Edit code: ");
-                scanner.nextLine();
                 String code = scanner.nextLine();
 
                 System.out.println("Edit name: ");
@@ -117,7 +114,7 @@ public class ProductServiceMenu {
                 System.out.println("Enter Y to confirm or any key to quit");
                 String yes = scanner.next();
                 if (yes.equalsIgnoreCase("y")) {
-                    productManager.editProduct(editId-1, code, name, price, amount, description);
+                    productManager.editProduct(id-1, code, name, price, amount, description);
                     System.out.println("Product edited");
                 } else {
                     new Main();
@@ -130,6 +127,30 @@ public class ProductServiceMenu {
             String continueOrQuit = scanner.next();
             if (continueOrQuit.equalsIgnoreCase("quit")) {
                 new Main();
+            }
+        }
+    }
+
+    public void editProduct() {
+        boolean checkEdit = true;
+        while (checkEdit) {
+            System.out.println("1. Edit by ID");
+            System.out.println("2. Edit by Code");
+
+            int option = scanner.nextInt();
+            switch (option) {
+                case 1:
+                    System.out.println("Enter ID: ");
+                    int id = scanner.nextInt();
+                    editProductById(id);
+                    break;
+                case 2:
+                    System.out.println("Enter code: ");
+                    scanner.nextLine();
+                    String code = scanner.nextLine();
+                    int codeId = productManager.findProductIdByCode(code);
+                    editProductById(codeId);
+                    break;
             }
         }
     }
