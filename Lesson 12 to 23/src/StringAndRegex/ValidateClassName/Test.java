@@ -11,11 +11,11 @@ public class Test {
         classroom = new Classroom();
         for (String name : validName) {
             boolean isvalid = classroom.validate(name);
-            System.out.println("Account is " + name +" is valid: "+ isvalid);
+            System.out.println("Classname " + name +" is valid: "+ isvalid);
         }
         for (String name : invalidName) {
             boolean isvalid = classroom.validate(name);
-            System.out.println("Account is " + name +" is valid: "+ isvalid);
+            System.out.println("Classname " + name +" is valid: "+ isvalid);
         }
     }
 
